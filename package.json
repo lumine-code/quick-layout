@@ -7,8 +7,12 @@
     "url": "https://github.com/lumine-code/quick-layout/issues"
   },
   "keywords": [
-    "layout",
-    "panes"
+    "dock",
+    "split",
+    "grid",
+    "columns",
+    "workspace",
+    "title-bar"
   ],
   "version": "1.0.0",
   "license": "MIT",
