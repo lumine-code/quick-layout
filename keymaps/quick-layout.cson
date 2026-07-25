@@ -1,8 +1,0 @@
-'atom-workspace':
-  'ctrl-numpad0': 'quick-layout:redistribute'
-  'ctrl-numpad1': 'quick-layout:toggle-left-dock'
-  'ctrl-numpad2': 'quick-layout:toggle-bottom-dock'
-  'ctrl-numpad3': 'quick-layout:toggle-right-dock'
-  'ctrl-numpad4': 'quick-layout:one-pane'
-  'ctrl-numpad5': 'quick-layout:two-columns'
-  'ctrl-numpad6': 'quick-layout:three-columns'

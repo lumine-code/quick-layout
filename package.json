@@ -1,17 +1,27 @@
 {
   "name": "quick-layout",
+  "author": "lumine-code",
   "description": "Quick access to predefined pane layouts and dock toggles",
-  "repository": "https://github.com/asiloisad/pulsar-quick-layout",
+  "repository": "https://github.com/lumine-code/quick-layout",
+  "bugs": {
+    "url": "https://github.com/lumine-code/quick-layout/issues"
+  },
   "keywords": [
     "layout",
     "panes"
   ],
-  "version": "1.0.2",
+  "version": "2.0.0",
   "license": "MIT",
   "engines": {
     "atom": ">=1.100.0 <2.0.0"
   },
   "main": "./lib/main",
+  "scripts": {
+    "test": "cd ../lumine && npm run test:only -- ../quick-layout/spec",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "consumedServices": {
     "title-bar": {
       "versions": {
@@ -21,18 +31,24 @@
   },
   "configSchema": {
     "showDockButtons": {
-      "order": 1,
       "title": "Show Dock Toggle Buttons",
       "description": "Show dock toggle buttons (left, bottom, right) in the title bar.",
       "type": "boolean",
       "default": true
     },
     "showLayoutButtons": {
-      "order": 2,
       "title": "Show Layout Buttons",
       "description": "Show layout buttons (1 pane, 2 columns, 3 columns, grid 2x2) in the title bar.",
       "type": "boolean",
       "default": true
     }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^18.2.2",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.6"
   }
 }

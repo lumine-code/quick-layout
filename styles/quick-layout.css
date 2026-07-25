@@ -1,0 +1,26 @@
+.quick-layout {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+
+  /* Show only on hover */
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  pointer-events: none;
+
+  &.inline-block {
+    width: 28px;
+  }
+}
+
+.title-bar .control-tiles:hover .quick-layout {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Hidden by default */
+#quick-layout-four-columns,
+#quick-layout-grid-3x3 {
+  display: none;
+}

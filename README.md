@@ -2,20 +2,18 @@
 
 Quick access to predefined pane layouts and dock toggles. Add buttons to the title bar for fast layout switching.
 
-![demo](https://github.com/asiloisad/pulsar-quick-layout/blob/master/assets/buttons.png?raw=true)
-
 Fork of [layout-control](https://github.com/rafamel/atom-layout-control).
 
 ## Features
 
-- **Title bar buttons**: Quick layout switching with independent title-bar control tiles (requires [title-bar](https://github.com/asiloisad/pulsar-title-bar)).
-- **Dock toggles**: Left, bottom, and right dock visibility.
+- **Title bar buttons**: quick layout switching with independent title-bar control tiles (requires the `title-bar` package).
+- **Dock toggles**: left, bottom, and right dock visibility.
 - **Layout presets**: 1-4 columns, 1-3 rows, and 2x2 grid.
-- **Hover reveal**: Buttons appear on title bar hover.
+- **Hover reveal**: buttons appear on title bar hover.
 
 ## Installation
 
-To install `quick-layout` search for [quick-layout](https://web.pulsar-edit.dev/packages/quick-layout) in the Install pane of the Pulsar settings or run `ppm install quick-layout`. Alternatively, you can run `ppm install asiloisad/pulsar-quick-layout` to install a package directly from the GitHub repository.
+To install `quick-layout` search for _quick-layout_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/quick-layout`.
 
 ## Commands
 
@@ -35,6 +33,8 @@ Commands available in `atom-workspace`:
 - `quick-layout:redistribute`: equally redistribute all center items across existing panes,
 - `quick-layout:sequentize`: assign 1 item per pane, overflow goes to the first pane.
 
+## Usage
+
 Right-click a layout button to automatically redistribute items after the layout change. Middle-click to sequentize instead.
 
 When switching to a layout with fewer panes, the active item from the previously active pane stays focused.
@@ -44,6 +44,7 @@ When switching to a layout with fewer panes, the active item from the previously
 The style can be adjusted according to user preferences in the `styles.less` file:
 
 - e.g. make buttons visible all the time instead of only on hover:
+
   ```less
   .quick-layout {
     opacity: 1;
@@ -52,6 +53,7 @@ The style can be adjusted according to user preferences in the `styles.less` fil
   ```
 
 - e.g. show four-columns and grid-3x3 buttons (hidden by default):
+
   ```less
   #quick-layout-four-columns,
   #quick-layout-grid-3x3 {
@@ -60,6 +62,7 @@ The style can be adjusted according to user preferences in the `styles.less` fil
   ```
 
 - e.g. hide a specific button by id (e.g. `#quick-layout-one-pane`, `#quick-layout-grid-2x2`):
+
   ```less
   #quick-layout-one-pane {
     display: none;
@@ -67,16 +70,22 @@ The style can be adjusted according to user preferences in the `styles.less` fil
   ```
 
 - e.g. hide dock toggle buttons but keep layout buttons (or vice versa):
+
   ```less
   .quick-layout-toggle {
     display: none;
   }
   ```
+
   ```less
   .quick-layout-layout {
     display: none;
   }
   ```
+
+## Services
+
+- **title-bar** (`^1.0.0`): consumed to add the dock toggle and layout buttons as control tiles in the title bar.
 
 ## Contributing
 
