@@ -1,7 +1,7 @@
 {
   "name": "quick-layout",
   "author": "lumine-code",
-  "description": "Quick access to predefined pane layouts and dock toggles",
+  "description": "Quick access to predefined pane layouts and dock toggles.",
   "repository": "https://github.com/lumine-code/quick-layout",
   "bugs": {
     "url": "https://github.com/lumine-code/quick-layout/issues"

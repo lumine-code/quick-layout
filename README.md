@@ -1,6 +1,8 @@
 # quick-layout
 
-Quick access to predefined pane layouts and dock toggles. Add buttons to the title bar for fast layout switching.
+Quick access to predefined pane layouts and dock toggles.
+
+Add buttons to the title bar for fast layout switching.
 
 Fork of [layout-control](https://github.com/rafamel/atom-layout-control).
 
