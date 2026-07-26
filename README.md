@@ -87,7 +87,7 @@ The style can be adjusted according to user preferences in the `styles.less` fil
 
 ## Services
 
-- **title-bar** (`^1.0.0`): consumed to add the dock toggle and layout buttons as control tiles in the title bar.
+- **[title-bar](https://lumine-code.github.io/docs.html#services/title-bar)** (`^1.0.0`): consumed to add the dock toggle and layout buttons as control tiles in the title bar.
 
 ## Contributing
 
