@@ -23,6 +23,13 @@
     "You can rearrange your panes into two columns with {{ 'quick-layout:two-columns' | keystroke }}"
   ],
   "main": "./lib/main",
+  "files": [
+    "keymaps",
+    "lib",
+    "menus",
+    "spec",
+    "styles"
+  ],
   "scripts": {
     "test": "lumine --test spec",
     "lint": "eslint . --max-warnings 0",
