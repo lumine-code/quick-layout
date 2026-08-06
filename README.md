@@ -43,11 +43,11 @@ When switching to a layout with fewer panes, the active item from the previously
 
 ## Customization
 
-The style can be adjusted according to user preferences in the `styles.less` file:
+The style can be adjusted according to user preferences in the `styles.css` file:
 
 - e.g. make buttons visible all the time instead of only on hover:
 
-  ```less
+  ```css
   .quick-layout {
     opacity: 1;
     pointer-events: auto;
@@ -56,7 +56,7 @@ The style can be adjusted according to user preferences in the `styles.less` fil
 
 - e.g. show four-columns and grid-3x3 buttons (hidden by default):
 
-  ```less
+  ```css
   #quick-layout-four-columns,
   #quick-layout-grid-3x3 {
     display: inline-block;
@@ -65,7 +65,7 @@ The style can be adjusted according to user preferences in the `styles.less` fil
 
 - e.g. hide a specific button by id (e.g. `#quick-layout-one-pane`, `#quick-layout-grid-2x2`):
 
-  ```less
+  ```css
   #quick-layout-one-pane {
     display: none;
   }
@@ -73,13 +73,13 @@ The style can be adjusted according to user preferences in the `styles.less` fil
 
 - e.g. hide dock toggle buttons but keep layout buttons (or vice versa):
 
-  ```less
+  ```css
   .quick-layout-toggle {
     display: none;
   }
   ```
 
-  ```less
+  ```css
   .quick-layout-layout {
     display: none;
   }
