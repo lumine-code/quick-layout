@@ -1,11 +1,15 @@
 {
+  // cmdorctrl- rather than a raw ctrl-, which has no macOS story.
   "atom-workspace": {
-    "ctrl-numpad0": "quick-layout:redistribute",
-    "ctrl-numpad1": "quick-layout:toggle-left-dock",
-    "ctrl-numpad2": "quick-layout:toggle-bottom-dock",
-    "ctrl-numpad3": "quick-layout:toggle-right-dock",
-    "ctrl-numpad4": "quick-layout:one-pane",
-    "ctrl-numpad5": "quick-layout:two-columns",
-    "ctrl-numpad6": "quick-layout:three-columns"
+    "cmdorctrl-numpad0": "quick-layout:redistribute",
+    "cmdorctrl-numpad1": "quick-layout:toggle-left-dock",
+    "cmdorctrl-numpad2": "quick-layout:toggle-bottom-dock",
+    "cmdorctrl-numpad3": "quick-layout:toggle-right-dock",
+    "cmdorctrl-numpad4": "quick-layout:one-pane",
+    "cmdorctrl-numpad5": "quick-layout:two-columns",
+    "cmdorctrl-numpad6": "quick-layout:three-columns",
+    "cmdorctrl-numpad7": "quick-layout:grid-2x2",
+    "cmdorctrl-numpad8": "quick-layout:two-rows",
+    "cmdorctrl-numpad9": "quick-layout:three-rows"
   }
 }
