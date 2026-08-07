@@ -6,23 +6,70 @@
         {
           "label": "Quick Layout",
           "submenu": [
-            { "label": "Toggle left dock", "command": "quick-layout:toggle-left-dock" },
-            { "label": "Toggle right dock", "command": "quick-layout:toggle-right-dock" },
-            { "label": "Toggle bottom dock", "command": "quick-layout:toggle-bottom-dock" },
-            { "type": "separator" },
-            { "label": "One pane", "command": "quick-layout:one-pane" },
-            { "label": "Two columns", "command": "quick-layout:two-columns" },
-            { "label": "Three columns", "command": "quick-layout:three-columns" },
-            { "label": "Four columns", "command": "quick-layout:four-columns" },
-            { "type": "separator" },
-            { "label": "Two rows", "command": "quick-layout:two-rows" },
-            { "label": "Three rows", "command": "quick-layout:three-rows" },
-            { "type": "separator" },
-            { "label": "Grid 2x2", "command": "quick-layout:grid-2x2" },
-            { "label": "Grid 3x3", "command": "quick-layout:grid-3x3" },
-            { "type": "separator" },
-            { "label": "Redistribute", "command": "quick-layout:redistribute" },
-            { "label": "Sequentize", "command": "quick-layout:sequentize" }
+            {
+              "label": "Toggle Left Dock",
+              "command": "quick-layout:toggle-left-dock"
+            },
+            {
+              "label": "Toggle Right Dock",
+              "command": "quick-layout:toggle-right-dock"
+            },
+            {
+              "label": "Toggle Bottom Dock",
+              "command": "quick-layout:toggle-bottom-dock"
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "label": "One Pane",
+              "command": "quick-layout:one-pane"
+            },
+            {
+              "label": "Two Columns",
+              "command": "quick-layout:two-columns"
+            },
+            {
+              "label": "Three Columns",
+              "command": "quick-layout:three-columns"
+            },
+            {
+              "label": "Four Columns",
+              "command": "quick-layout:four-columns"
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "label": "Two Rows",
+              "command": "quick-layout:two-rows"
+            },
+            {
+              "label": "Three Rows",
+              "command": "quick-layout:three-rows"
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "label": "Grid 2x2",
+              "command": "quick-layout:grid-2x2"
+            },
+            {
+              "label": "Grid 3x3",
+              "command": "quick-layout:grid-3x3"
+            },
+            {
+              "type": "separator"
+            },
+            {
+              "label": "Redistribute",
+              "command": "quick-layout:redistribute"
+            },
+            {
+              "label": "Sequentize",
+              "command": "quick-layout:sequentize"
+            }
           ]
         }
       ]
