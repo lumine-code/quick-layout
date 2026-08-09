@@ -2,13 +2,13 @@ describe("quick-layout", () => {
   let workspaceElement, mainModule;
 
   beforeEach(async () => {
-    workspaceElement = atom.views.getView(atom.workspace);
+    workspaceElement = lumine.views.getView(lumine.workspace);
     jasmine.attachToDOM(workspaceElement);
-    mainModule = (await atom.packages.activatePackage("quick-layout")).mainModule;
+    mainModule = (await lumine.packages.activatePackage("quick-layout")).mainModule;
   });
 
   function dispatch(command, detail) {
-    atom.commands.dispatch(workspaceElement, command, detail);
+    lumine.commands.dispatch(workspaceElement, command, detail);
   }
 
   // The layout commands run async pane surgery built purely on microtasks,
@@ -20,29 +20,29 @@ describe("quick-layout", () => {
   }
 
   function getPanes() {
-    return atom.workspace.getCenter().getPanes();
+    return lumine.workspace.getCenter().getPanes();
   }
 
   describe("dock toggles", () => {
     it("toggles the left dock", () => {
-      expect(atom.workspace.getLeftDock().isVisible()).toBe(false);
+      expect(lumine.workspace.getLeftDock().isVisible()).toBe(false);
       dispatch("quick-layout:toggle-left-dock");
-      expect(atom.workspace.getLeftDock().isVisible()).toBe(true);
+      expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
       dispatch("quick-layout:toggle-left-dock");
-      expect(atom.workspace.getLeftDock().isVisible()).toBe(false);
+      expect(lumine.workspace.getLeftDock().isVisible()).toBe(false);
     });
 
     it("toggles the bottom and right docks", () => {
       dispatch("quick-layout:toggle-bottom-dock");
-      expect(atom.workspace.getBottomDock().isVisible()).toBe(true);
+      expect(lumine.workspace.getBottomDock().isVisible()).toBe(true);
       dispatch("quick-layout:toggle-right-dock");
-      expect(atom.workspace.getRightDock().isVisible()).toBe(true);
+      expect(lumine.workspace.getRightDock().isVisible()).toBe(true);
     });
   });
 
   describe("layout presets", () => {
     it("creates two columns and returns to one pane", async () => {
-      await atom.workspace.open();
+      await lumine.workspace.open();
       dispatch("quick-layout:two-columns");
       await settle();
       expect(getPanes().length).toBe(2);
@@ -53,33 +53,33 @@ describe("quick-layout", () => {
     });
 
     it("creates three columns", async () => {
-      await atom.workspace.open();
+      await lumine.workspace.open();
       dispatch("quick-layout:three-columns");
       await settle();
       expect(getPanes().length).toBe(3);
     });
 
     it("creates a 2x2 grid", async () => {
-      await atom.workspace.open();
+      await lumine.workspace.open();
       dispatch("quick-layout:grid-2x2");
       await settle();
       expect(getPanes().length).toBe(4);
     });
 
     it("keeps the active item focused when reducing panes", async () => {
-      const editor = await atom.workspace.open();
+      const editor = await lumine.workspace.open();
       dispatch("quick-layout:two-columns");
       await settle();
       dispatch("quick-layout:one-pane");
       await settle();
-      expect(atom.workspace.getCenter().getActivePane().getActiveItem()).toBe(editor);
+      expect(lumine.workspace.getCenter().getActivePane().getActiveItem()).toBe(editor);
     });
   });
 
   describe("item distribution", () => {
     beforeEach(async () => {
       for (let i = 0; i < 4; i++) {
-        await atom.workspace.open();
+        await lumine.workspace.open();
       }
       dispatch("quick-layout:two-columns");
       await settle();
@@ -135,14 +135,14 @@ describe("quick-layout", () => {
     });
 
     it("removes and restores buttons when settings change", () => {
-      atom.config.set("quick-layout.showLayoutButtons", false);
+      lumine.config.set("quick-layout.showLayoutButtons", false);
       expect(titleBar.tiles.length).toBe(3);
       expect(titleBar.element.querySelectorAll(".quick-layout-layout").length).toBe(0);
 
-      atom.config.set("quick-layout.showLayoutButtons", true);
+      lumine.config.set("quick-layout.showLayoutButtons", true);
       expect(titleBar.tiles.length).toBe(9);
 
-      atom.config.set("quick-layout.showDockButtons", false);
+      lumine.config.set("quick-layout.showDockButtons", false);
       expect(titleBar.element.querySelectorAll(".quick-layout-toggle").length).toBe(0);
     });
 
@@ -150,15 +150,15 @@ describe("quick-layout", () => {
       const button = titleBar.element.querySelector("#quick-layout-toggle-left-dock");
       expect(button).not.toBeNull();
       button.click();
-      expect(atom.workspace.getLeftDock().isVisible()).toBe(true);
+      expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
     });
 
     it("updates the dock button icon on visibility change", () => {
       const button = titleBar.element.querySelector("#quick-layout-toggle-left-dock");
       const closedIcon = button.innerHTML;
-      atom.workspace.getLeftDock().show();
+      lumine.workspace.getLeftDock().show();
       expect(button.innerHTML).not.toBe(closedIcon);
-      atom.workspace.getLeftDock().hide();
+      lumine.workspace.getLeftDock().hide();
       expect(button.innerHTML).toBe(closedIcon);
     });
   });

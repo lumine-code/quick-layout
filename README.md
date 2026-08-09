@@ -4,7 +4,7 @@ Quick access to predefined pane layouts and dock toggles.
 
 Add buttons to the title bar for fast layout switching.
 
-Fork of [layout-control](https://github.com/rafamel/atom-layout-control).
+Fork of [layout-control](https://github.com/rafamel/lumine-layout-control).
 
 ## Features
 
@@ -19,7 +19,7 @@ To install `quick-layout` search for _quick-layout_ in the Install pane of the L
 
 ## Commands
 
-Commands available in `atom-workspace`:
+Commands available in `lumine-workspace`:
 
 - `quick-layout:toggle-left-dock`: toggle left dock visibility,
 - `quick-layout:toggle-bottom-dock`: toggle bottom dock visibility,

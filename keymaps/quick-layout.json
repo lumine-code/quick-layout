@@ -1,6 +1,6 @@
 {
   // cmdorctrl- rather than a raw ctrl-, which has no macOS story.
-  "atom-workspace": {
+  "lumine-workspace": {
     "cmdorctrl-numpad0": "quick-layout:redistribute",
     "cmdorctrl-numpad1": "quick-layout:toggle-left-dock",
     "cmdorctrl-numpad2": "quick-layout:toggle-bottom-dock",
