@@ -9,7 +9,10 @@
   transition: opacity 0.15s ease;
   pointer-events: none;
 
-  &.inline-block {
+  /* The title bar stamps `.title-bar-item` on each element it hosts, which is
+     what makes these buttons tiles; the theme sizes their height, this sets
+     the width. */
+  &.title-bar-item {
     width: 28px;
   }
 }
