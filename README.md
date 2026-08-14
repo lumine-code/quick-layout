@@ -15,7 +15,7 @@ Fork of [layout-control](https://github.com/rafamel/lumine-layout-control).
 
 ## Installation
 
-To install `quick-layout` search for _quick-layout_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/quick-layout`.
+To install `quick-layout` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/quick-layout`.
 
 ## Commands
 
@@ -87,7 +87,7 @@ The style can be adjusted according to user preferences in the `styles.css` file
 
 ## Services
 
-- **title-bar** (`^1.0.0`): consumed to add the dock toggle and layout buttons as control tiles in the title bar.
+- `title-bar`: consumed to add the dock toggle and layout buttons as control tiles in the title bar.
 
 ## Contributing
 
