@@ -20,7 +20,7 @@ describe("quick-layout", () => {
   }
 
   function getPanes() {
-    return lumine.workspace.getCenter().getPanes();
+    return lumine.workspace.getCenter().getTiledPanes();
   }
 
   describe("dock toggles", () => {
@@ -95,6 +95,19 @@ describe("quick-layout", () => {
       dispatch("quick-layout:sequentize");
       await settle();
       expect(getPanes().map((pane) => pane.getItems().length)).toEqual([3, 1]);
+    });
+
+    it("uses a tiled pane as the layout anchor while a detached pane is active", async () => {
+      const center = lumine.workspace.getCenter();
+      spyOn(center, "getActivePane").and.returnValue({
+        isDetached: () => true,
+        getActiveItem: () => ({ detached: true }),
+      });
+
+      dispatch("quick-layout:redistribute");
+      await settle();
+
+      expect(getPanes().map((pane) => pane.getItems().length)).toEqual([2, 2]);
     });
   });
 
