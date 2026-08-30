@@ -24,18 +24,22 @@ describe("quick-layout", () => {
   }
 
   describe("dock toggles", () => {
-    it("toggles the left dock", () => {
+    it("toggles the left dock", async () => {
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(false);
       dispatch("quick-layout:toggle-left-dock");
+      await settle();
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
       dispatch("quick-layout:toggle-left-dock");
+      await settle();
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(false);
     });
 
-    it("toggles the bottom and right docks", () => {
+    it("toggles the bottom and right docks", async () => {
       dispatch("quick-layout:toggle-bottom-dock");
+      await settle();
       expect(lumine.workspace.getBottomDock().isVisible()).toBe(true);
       dispatch("quick-layout:toggle-right-dock");
+      await settle();
       expect(lumine.workspace.getRightDock().isVisible()).toBe(true);
     });
   });
@@ -73,6 +77,26 @@ describe("quick-layout", () => {
       dispatch("quick-layout:one-pane");
       await settle();
       expect(lumine.workspace.getCenter().getActivePane().getActiveItem()).toBe(editor);
+    });
+
+    it("waits for the primary window before mutating the tiled layout", async () => {
+      await lumine.workspace.open();
+      let releaseFocus;
+      const focusPrimaryWindow = spyOn(lumine.workspace, "focusPrimaryWindow").and.returnValue(
+        new Promise((resolve) => {
+          releaseFocus = resolve;
+        }),
+      );
+
+      dispatch("quick-layout:two-columns");
+      await settle();
+
+      expect(focusPrimaryWindow).toHaveBeenCalled();
+      expect(getPanes().length).toBe(1);
+
+      releaseFocus();
+      await settle();
+      expect(getPanes().length).toBe(2);
     });
   });
 
@@ -159,10 +183,11 @@ describe("quick-layout", () => {
       expect(titleBar.element.querySelectorAll(".quick-layout-toggle").length).toBe(0);
     });
 
-    it("toggles a dock when its button is clicked", () => {
+    it("toggles a dock when its button is clicked", async () => {
       const button = titleBar.element.querySelector("#quick-layout-toggle-left-dock");
       expect(button).not.toBeNull();
       button.click();
+      await settle();
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
     });
 
