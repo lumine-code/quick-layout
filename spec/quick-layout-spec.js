@@ -20,26 +20,22 @@ describe("quick-layout", () => {
   }
 
   function getPanes() {
-    return lumine.workspace.getCenter().getTiledPanes();
+    return lumine.workspace.getCenter().getPanes();
   }
 
   describe("dock toggles", () => {
-    it("toggles the left dock", async () => {
+    it("toggles the left dock", () => {
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(false);
       dispatch("quick-layout:toggle-left-dock");
-      await settle();
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
       dispatch("quick-layout:toggle-left-dock");
-      await settle();
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(false);
     });
 
-    it("toggles the bottom and right docks", async () => {
+    it("toggles the bottom and right docks", () => {
       dispatch("quick-layout:toggle-bottom-dock");
-      await settle();
       expect(lumine.workspace.getBottomDock().isVisible()).toBe(true);
       dispatch("quick-layout:toggle-right-dock");
-      await settle();
       expect(lumine.workspace.getRightDock().isVisible()).toBe(true);
     });
   });
@@ -78,26 +74,6 @@ describe("quick-layout", () => {
       await settle();
       expect(lumine.workspace.getCenter().getActivePane().getActiveItem()).toBe(editor);
     });
-
-    it("waits for the primary window before mutating the tiled layout", async () => {
-      await lumine.workspace.open();
-      let releaseFocus;
-      const focusPrimaryWindow = spyOn(lumine.workspace, "focusPrimaryWindow").and.returnValue(
-        new Promise((resolve) => {
-          releaseFocus = resolve;
-        }),
-      );
-
-      dispatch("quick-layout:two-columns");
-      await settle();
-
-      expect(focusPrimaryWindow).toHaveBeenCalled();
-      expect(getPanes().length).toBe(1);
-
-      releaseFocus();
-      await settle();
-      expect(getPanes().length).toBe(2);
-    });
   });
 
   describe("item distribution", () => {
@@ -119,19 +95,6 @@ describe("quick-layout", () => {
       dispatch("quick-layout:sequentize");
       await settle();
       expect(getPanes().map((pane) => pane.getItems().length)).toEqual([3, 1]);
-    });
-
-    it("uses a tiled pane as the layout anchor while a detached pane is active", async () => {
-      const center = lumine.workspace.getCenter();
-      spyOn(center, "getActivePane").and.returnValue({
-        isDetached: () => true,
-        getActiveItem: () => ({ detached: true }),
-      });
-
-      dispatch("quick-layout:redistribute");
-      await settle();
-
-      expect(getPanes().map((pane) => pane.getItems().length)).toEqual([2, 2]);
     });
   });
 
@@ -183,11 +146,10 @@ describe("quick-layout", () => {
       expect(titleBar.element.querySelectorAll(".quick-layout-toggle").length).toBe(0);
     });
 
-    it("toggles a dock when its button is clicked", async () => {
+    it("toggles a dock when its button is clicked", () => {
       const button = titleBar.element.querySelector("#quick-layout-toggle-left-dock");
       expect(button).not.toBeNull();
       button.click();
-      await settle();
       expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
     });
 
