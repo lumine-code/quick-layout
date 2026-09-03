@@ -74,6 +74,34 @@ describe("quick-layout", () => {
       await settle();
       expect(lumine.workspace.getCenter().getActivePane().getActiveItem()).toBe(editor);
     });
+
+    it("keeps the active right pane without publishing temporary active items", async () => {
+      const leftEditor = await lumine.workspace.open();
+      dispatch("quick-layout:two-columns");
+      await settle();
+      const rightPane = getPanes()[1];
+      const rightEditor = lumine.workspace.buildTextEditor();
+      rightEditor.setText("right pane text");
+      rightPane.activateItem(rightEditor);
+      rightPane.activate();
+      lumine.config.set("core.destroyEmptyPanes", true);
+      const activeItems = [];
+      const subscription = lumine.workspace
+        .getCenter()
+        .onDidChangeActivePaneItem((item) => activeItems.push(item));
+
+      dispatch("quick-layout:one-pane");
+      await settle();
+      subscription.dispose();
+
+      expect(getPanes()).toEqual([rightPane]);
+      expect(rightPane.getActiveItem()).toBe(rightEditor);
+      expect(rightPane.getItems()).toEqual([leftEditor, rightEditor]);
+      expect(activeItems).toEqual([]);
+      const rightEditorElement = lumine.views.getView(rightEditor);
+      expect(rightEditorElement.isConnected).toBe(true);
+      expect(rightEditorElement.textContent).toContain("right pane text");
+    });
   });
 
   describe("item distribution", () => {
