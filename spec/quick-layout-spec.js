@@ -41,6 +41,34 @@ describe("quick-layout", () => {
   });
 
   describe("layout presets", () => {
+    for (const [preset, paneCount, orientation] of [
+      ["two-columns", 2, "horizontal"],
+      ["three-columns", 3, "horizontal"],
+      ["four-columns", 4, "horizontal"],
+      ["two-rows", 2, "vertical"],
+      ["three-rows", 3, "vertical"],
+      ["grid-2x2", 4, "vertical"],
+      ["grid-3x3", 9, "vertical"],
+    ]) {
+      it(`creates ${preset} from one empty pane on the first dispatch`, async () => {
+        const center = lumine.workspace.getCenter();
+        expect(getPanes().length).toBe(1);
+        expect(getPanes()[0].getItems()).toEqual([]);
+
+        dispatch(`quick-layout:${preset}`);
+        await settle();
+        expect(getPanes().length).toBe(paneCount);
+        expect(center.paneContainer.getRoot().getOrientation()).toBe(orientation);
+        for (const pane of getPanes()) {
+          expect(pane.getItems()).toEqual([]);
+        }
+
+        dispatch(`quick-layout:${preset}`);
+        await settle();
+        expect(getPanes().length).toBe(paneCount);
+      });
+    }
+
     it("creates two columns and returns to one pane", async () => {
       await lumine.workspace.open();
       dispatch("quick-layout:two-columns");
