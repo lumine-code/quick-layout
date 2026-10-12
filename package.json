@@ -43,7 +43,7 @@
   "consumedServices": {
     "title-bar": {
       "versions": {
-        "^1.0.0": "consumeTitleBar"
+        "^2.0.0": "consumeTitleBar"
       }
     }
   },

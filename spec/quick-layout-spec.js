@@ -181,7 +181,7 @@ describe("quick-layout", () => {
 
     beforeEach(() => {
       titleBar = createFakeTitleBar();
-      mainModule.consumeTitleBar(titleBar);
+      mainModule.consumeWindowTitleBar(titleBar, { window: lumine.workspace.getMainWindow() });
     });
 
     it("adds dock and layout buttons as control tiles", () => {

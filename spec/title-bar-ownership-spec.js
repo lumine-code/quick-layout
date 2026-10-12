@@ -4,7 +4,11 @@ describe("quick-layout title-bar service ownership", () => {
   let mainModule, bars, providers, tooltips, dockSubscriptions;
 
   function provide(bar) {
-    const provider = lumine.packages.serviceHub.provide("title-bar", "1.0.0", bar);
+    const provider = lumine.packages.serviceHub.provide("title-bar", "2.0.0", {
+      observeWindows(callback) {
+        return callback(bar, { window: lumine.workspace.getMainWindow() });
+      },
+    });
     providers.push(provider);
     return provider;
   }
@@ -140,10 +144,14 @@ describe("quick-layout title-bar service ownership", () => {
 
   it("does not let a retired activation's direct edge remove newer controls on the same bar", async () => {
     const bar = createBar();
-    const oldEdge = mainModule.consumeTitleBar(bar);
+    const oldEdge = mainModule.consumeWindowTitleBar(bar, {
+      window: lumine.workspace.getMainWindow(),
+    });
     await lumine.packages.deactivatePackage("quick-layout");
     mainModule = (await lumine.packages.activatePackage("quick-layout")).mainModule;
-    const currentEdge = mainModule.consumeTitleBar(bar);
+    const currentEdge = mainModule.consumeWindowTitleBar(bar, {
+      window: lumine.workspace.getMainWindow(),
+    });
     oldEdge.dispose();
     expect(bar.getTiles().length).toBe(9);
     currentEdge.dispose();
