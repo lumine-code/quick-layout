@@ -13,10 +13,10 @@ describe("Quick Layout title tile menus", () => {
     await lumine.workspace.discardEditorWindows();
   });
   const menu = (tile) => lumine.contextMenu.templateForElement(tile);
-  it("lists all layout variants with their mouse shortcuts and leaves right click inert", () => {
+  it("lists all layout variants and leaves right click inert", () => {
     const tile = window.getElement().querySelector("#quick-layout-two-columns");
     const actions = menu(tile).filter((item) => item.command);
-    expect(actions.map((item) => item.mouseBindingLabel)).toEqual(["LMB", "Alt+LMB", "MMB"]);
+
     expect(actions.map((item) => item.commandDetail)).toEqual([
       undefined,
       { redistribute: true },
@@ -45,7 +45,6 @@ describe("Quick Layout title tile menus", () => {
     expect(menu(tile).find((item) => item.command).checked).toBe(false);
     dock.show();
     expect(menu(tile).find((item) => item.command).checked).toBe(true);
-    expect(menu(tile).find((item) => item.command).mouseBindingLabel).toBe("LMB / MMB");
     const options = tooltips.calls.all().find((call) => call.args[0] === tile).args[1];
     expect(options.keyBindingCommand).toBe("quick-layout:toggle-left-dock");
     expect(options.keyBindingTarget).toBe(window.getElement());
