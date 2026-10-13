@@ -38,6 +38,27 @@ describe("Quick Layout title tile menus", () => {
       sequentize: true,
     });
   });
+  it("shows layout shortcuts only for the primary action", () => {
+    const tiles = window.getElement().querySelectorAll(".quick-layout-layout");
+    expect(tiles.length).toBe(6);
+    for (const tile of tiles) {
+      const actions = menu(tile).filter((item) => item.command);
+      expect(actions[1].keyBindingLabel).toBeUndefined();
+      expect(actions[2].keyBindingLabel).toBeUndefined();
+      const popup = lumine.contextMenu.show(tile, actions);
+      try {
+        const labels = [...popup.element.querySelectorAll(".menu-item-keystroke")].map(
+          (element) => element.textContent,
+        );
+        expect(labels.slice(1)).toEqual(["", ""]);
+        if (tile.id === "quick-layout-two-columns") {
+          expect(labels[0]).toBe(process.platform === "darwin" ? "⌘numpad5" : "Ctrl+Numpad5");
+        }
+      } finally {
+        popup.close();
+      }
+    }
+  });
   it("reads dock visibility when opened and keeps state and the primary action in plain tooltips", () => {
     const tile = window.getElement().querySelector("#quick-layout-toggle-left-dock");
     const dock = lumine.workspace.getLeftDock();
