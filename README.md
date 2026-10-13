@@ -13,6 +13,8 @@ Fork of [layout-control](https://github.com/rafamel/atom-layout-control).
 - **Layout presets**: 1-4 columns, 1-3 rows, and 2x2 grid.
 - **Hover reveal**: buttons appear on title bar hover.
 
+![Arrange two source panes side by side.](.github/demo.png)
+
 ## Installation
 
 To install `quick-layout` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/quick-layout`.

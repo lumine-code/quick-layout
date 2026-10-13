@@ -1,0 +1,16 @@
+{
+  "title": "quick-layout",
+  "description": "Arrange two source panes side by side.",
+  "recordedOn": "2026-10-13",
+  "sourceRevision": "ed8175ff34ebf43b62dfd9733a85a8b3a1a68ff4",
+  "mode": "normal",
+  "fontSettings": "default",
+  "images": [
+    {
+      "file": "demo.png",
+      "label": "Arrange two source panes side by side.",
+      "width": 1200,
+      "height": 760
+    }
+  ]
+}
