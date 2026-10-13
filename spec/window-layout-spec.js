@@ -16,7 +16,7 @@ describe("quick-layout presentation windows", () => {
 
   it("adds layout controls to existing and future windows, with docks only in main", async () => {
     const extra = await lumine.workspace.openEditorWindow({ show: false });
-    expect(titleBar.forWindow(extra).getTiles().length).toBe(7); // Six presets and the core reattach pin.
+    expect(titleBar.forWindow(extra).getTiles().length).toBe(6);
     expect(extra.getElement().querySelectorAll(".quick-layout-layout").length).toBe(6);
     expect(extra.getElement().querySelectorAll(".quick-layout-toggle").length).toBe(0);
     const main = lumine.workspace.getMainWindow();
