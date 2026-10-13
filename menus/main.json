@@ -8,15 +8,21 @@
           "submenu": [
             {
               "label": "Left Dock",
-              "command": "quick-layout:toggle-left-dock"
+              "command": "quick-layout:toggle-left-dock",
+              "group": "docks",
+              "order": 10
             },
             {
               "label": "Right Dock",
-              "command": "quick-layout:toggle-right-dock"
+              "command": "quick-layout:toggle-right-dock",
+              "group": "docks",
+              "order": 20
             },
             {
               "label": "Bottom Dock",
-              "command": "quick-layout:toggle-bottom-dock"
+              "command": "quick-layout:toggle-bottom-dock",
+              "group": "docks",
+              "order": 30
             }
           ]
         },
@@ -81,7 +87,9 @@
                   "label": "Sequentize",
                   "command": "quick-layout:sequentize"
                 }
-              ]
+              ],
+              "group": "layout",
+              "order": 50
             }
           ]
         }
