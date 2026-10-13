@@ -39,7 +39,7 @@ Commands available in `lumine-workspace`:
 
 Left click a layout button to apply its preset, alt-click to redistribute items afterward, or middle click to sequentize them. Right click opens a menu containing every action and its mouse shortcut. Dock buttons show their visibility and toggle on left or middle click; their context menu shows the same toggle with its current state.
 
-Tooltips show the current state and primary click action. Mouse shortcuts appear beside the corresponding context-menu actions.
+Tooltips show the current state and primary click action with its matching keyboard binding. Mouse shortcuts appear beside the corresponding context-menu actions.
 
 When switching to a layout with fewer panes, the active item from the previously active pane stays focused.
 

@@ -47,7 +47,9 @@ describe("Quick Layout title tile menus", () => {
     expect(menu(tile).find((item) => item.command).checked).toBe(true);
     expect(menu(tile).find((item) => item.command).mouseBindingLabel).toBe("LMB / MMB");
     const options = tooltips.calls.all().find((call) => call.args[0] === tile).args[1];
-    expect(options.keyBindingCommand).toBeUndefined();
+    expect(options.keyBindingCommand).toBe("quick-layout:toggle-left-dock");
+    expect(options.keyBindingTarget).toBe(window.getElement());
+    expect(options.html).toBe(false);
     expect(options.keyBindingExtra).toBeUndefined();
     expect(options.title()).toBe("Left dock is open. Toggle this dock.");
   });
