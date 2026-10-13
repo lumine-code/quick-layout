@@ -1,6 +1,93 @@
 {
   "menu": [
     {
+      "label": "View",
+      "submenu": [
+        {
+          "label": "Toggle View",
+          "submenu": [
+            {
+              "label": "Left Dock",
+              "command": "quick-layout:toggle-left-dock"
+            },
+            {
+              "label": "Right Dock",
+              "command": "quick-layout:toggle-right-dock"
+            },
+            {
+              "label": "Bottom Dock",
+              "command": "quick-layout:toggle-bottom-dock"
+            }
+          ]
+        },
+        {
+          "label": "Panes",
+          "submenu": [
+            {
+              "label": "Layout",
+              "submenu": [
+                {
+                  "label": "One Pane",
+                  "command": "quick-layout:one-pane"
+                },
+                {
+                  "label": "Columns",
+                  "submenu": [
+                    {
+                      "label": "Two Columns",
+                      "command": "quick-layout:two-columns"
+                    },
+                    {
+                      "label": "Three Columns",
+                      "command": "quick-layout:three-columns"
+                    },
+                    {
+                      "label": "Four Columns",
+                      "command": "quick-layout:four-columns"
+                    }
+                  ]
+                },
+                {
+                  "label": "Rows",
+                  "submenu": [
+                    {
+                      "label": "Two Rows",
+                      "command": "quick-layout:two-rows"
+                    },
+                    {
+                      "label": "Three Rows",
+                      "command": "quick-layout:three-rows"
+                    }
+                  ]
+                },
+                {
+                  "label": "Grid",
+                  "submenu": [
+                    {
+                      "label": "2x2",
+                      "command": "quick-layout:grid-2x2"
+                    },
+                    {
+                      "label": "3x3",
+                      "command": "quick-layout:grid-3x3"
+                    }
+                  ]
+                },
+                {
+                  "label": "Redistribute",
+                  "command": "quick-layout:redistribute"
+                },
+                {
+                  "label": "Sequentize",
+                  "command": "quick-layout:sequentize"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "label": "Packages",
       "submenu": [
         {
