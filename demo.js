@@ -18,7 +18,10 @@ module.exports = {
       async run(context) {
         const { lumine, state, fixture } = context;
         {
-          lumine.commands.dispatch(lumine.views.getView(state.editor), "quick-layout:two-columns");
+          await lumine.commands.dispatch(
+            lumine.views.getView(state.editor),
+            "quick-layout:two-columns",
+          );
           lumine.workspace.getCenter().getPanes()[1].activate();
           await lumine.workspace.open(fixture("Signal Lab/README.md"));
           lumine.workspace.getCenter().getPanes()[0].activateItem(state.editor);
@@ -26,7 +29,17 @@ module.exports = {
       },
       ready(context) {
         const { lumine } = context;
-        return Boolean(lumine.workspace.getCenter().getPanes().length === 2);
+        const panes = lumine.workspace.getCenter().getPanes();
+        return (
+          panes.length === 2 &&
+          panes.every((pane) => {
+            const editor = pane.getActiveItem();
+            return (
+              editor?.getText?.().length > 0 &&
+              editor.getElement().getBoundingClientRect().height > 0
+            );
+          })
+        );
       },
     },
   ],
