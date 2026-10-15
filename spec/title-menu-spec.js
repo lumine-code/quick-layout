@@ -3,6 +3,7 @@ describe("Quick Layout title tile menus", () => {
   beforeEach(async () => {
     jasmine.useRealClock();
     jasmine.attachToDOM(lumine.workspace.getElement());
+    lumine.workspace.getElement().focus();
     tooltips = spyOn(lumine.tooltips, "add").and.callThrough();
     await lumine.packages.activatePackage("title-bar");
     main = (await lumine.packages.activatePackage("quick-layout")).mainModule;
