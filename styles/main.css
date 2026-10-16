@@ -18,6 +18,7 @@
 }
 
 .title-bar .control-tiles:hover .quick-layout {
+  color: var(--text-color);
   opacity: 1;
   pointer-events: auto;
 }
