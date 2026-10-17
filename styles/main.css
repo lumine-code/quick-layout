@@ -4,7 +4,7 @@
   height: 100%;
   flex-shrink: 0;
 
-  /* Show only on hover */
+  /* Reveal the controls for pointer and keyboard navigation. */
   opacity: 0;
   transition: opacity 0.15s ease;
   pointer-events: none;
@@ -17,7 +17,7 @@
   }
 }
 
-.title-bar .control-tiles:hover .quick-layout {
+.title-bar .control-tiles:is(:hover, :focus-within) .quick-layout {
   color: var(--text-color);
   opacity: 1;
   pointer-events: auto;
@@ -27,4 +27,11 @@
 #quick-layout-four-columns,
 #quick-layout-grid-3x3 {
   display: none;
+}
+
+/* Respect reduced motion while retaining visible status indicators. */
+@media (prefers-reduced-motion: reduce) {
+  .quick-layout {
+    transition: none;
+  }
 }
