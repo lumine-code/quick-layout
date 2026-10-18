@@ -1,54 +1,60 @@
 {
   "title": "quick-layout",
   "description": "Arrange two source panes side by side.",
-  "recordedOn": "2026-10-14",
-  "sourceRevision": "c410bc584d4557b1eaf3bd3f9d6918445e3342fd",
-  "themeSourceRevision": "7fbd047a87ecf1367c896b19ff270cdc28d319f7",
+  "recordedOn": "2026-10-19",
+  "sourceRevision": "dff21fd4505a3928effd292fe127e4ba53d215ac",
+  "themeSourceRevision": "5fa8d5ccb0a0143445f99b7b0fc7d606dbeeee45",
   "mode": "normal",
   "fontSettings": "default",
   "scenario": "demo.js",
-  "recipeHash": "97fd500a79bc069c3feac2405c2f5f574f1ec995059097a854947feabcd35012",
+  "recipeHash": "edeeda863c0ab2213241e7741ee9734f75ff9613b1e3a182f29d2e4ffd62ffab",
   "environment": {
     "platform": "win32",
     "arch": "x64",
-    "electron": "44.7.0",
-    "chrome": "152.0.7977.130",
+    "electron": "44.9.0",
+    "chrome": "152.0.7977.167",
     "devicePixelRatio": 1,
     "locale": "en-GB",
     "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
     "fontSize": 14,
     "themes": ["one-day-syntax", "one-day-ui"]
   },
-  "viewport": { "width": 1200, "height": 760 },
+  "viewport": { "width": 840, "height": 760 },
   "cornerRadius": 10,
+  "privacy": { "version": 1, "location": "neutral", "textChecked": true },
   "sources": {
     "editor": {
-      "revision": "29dc912b2f81d9b6253f326d886c033c5f7ea302",
-      "dirty": false,
-      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      "revision": "2e03362b21e5f475f8e5a9d9686ee62850df42eb",
+      "dirty": true,
+      "workingTreeHash": "60aeedee21c1889e24e33746e910d3f7440e1b052435ee033c0b2f0043927675"
     },
     "package": {
-      "revision": "c410bc584d4557b1eaf3bd3f9d6918445e3342fd",
+      "revision": "dff21fd4505a3928effd292fe127e4ba53d215ac",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "quick-layout": {
-      "revision": "c410bc584d4557b1eaf3bd3f9d6918445e3342fd",
+      "revision": "dff21fd4505a3928effd292fe127e4ba53d215ac",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "language-javascript": {
-      "revision": "ae2e6968e3a349fb4d09ce53e339a0f8cce903aa",
+      "revision": "721d40ef20e4ffda4125b375f50c908541fa7c08",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "one-theme": {
-      "revision": "7fbd047a87ecf1367c896b19ff270cdc28d319f7",
+      "revision": "5fa8d5ccb0a0143445f99b7b0fc7d606dbeeee45",
+      "dirty": true,
+      "workingTreeHash": "6991d4eedf4ab0a365ec52d81421c92dd0cfc842aed0242b3fe4273d1715fd0e"
+    },
+    "title-bar": {
+      "revision": "2205575d8b721c7dc0f606d28db1c85a30ea7424",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "tree-view": {
-      "revision": "fe6f35de06f036837aa9c2d3b138b3d72557bcc4",
+      "revision": "bb607ede1294006c7276458f5330aea426801471",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     }
@@ -79,9 +85,9 @@
     {
       "file": "demo.png",
       "label": "Arrange two source panes side by side.",
-      "width": 1200,
+      "width": 840,
       "height": 760,
-      "sha256": "8ddae391ee9b843e400c992dc58a62f51beba3aacdedcdebb952e2d4174e399e"
+      "sha256": "5e8579a1472e29f8b592d7ccb360e9b25ef94dbe36f926d31ddb53735aec6677"
     }
   ]
 }
