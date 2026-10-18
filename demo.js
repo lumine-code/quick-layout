@@ -28,7 +28,10 @@ module.exports = {
         }
       },
       // The runner's pointer rests over the controls at this viewport width.
-      afterPointerMove() {},
+      afterPointerMove({ lumine }) {
+        for (const tooltips of lumine.tooltips.tooltips.values())
+          for (const tooltip of tooltips) tooltip.cancel();
+      },
       ready(context) {
         const { lumine } = context;
         const panes = lumine.workspace.getCenter().getPanes();
