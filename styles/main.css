@@ -3,6 +3,7 @@
   align-items: center;
   height: 100%;
   flex-shrink: 0;
+  color: var(--text-color-subtle);
 
   /* Reveal the controls for pointer and keyboard navigation. */
   opacity: 0;
@@ -18,7 +19,6 @@
 }
 
 .title-bar .control-tiles:is(:hover, :focus-within) .quick-layout {
-  color: var(--text-color);
   opacity: 1;
   pointer-events: auto;
 }

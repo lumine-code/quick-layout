@@ -1,8 +1,8 @@
 // Authentic package usage. Run with lumine/script/demo.js; fixtures stay in demo/.
 module.exports = {
   version: 1,
-  dependencies: ["language-javascript", "tree-view"],
-  viewport: { width: 1200, height: 760 },
+  dependencies: ["language-javascript", "tree-view", "title-bar"],
+  viewport: { width: 840, height: 760 },
   async before() {},
   async prepare(context) {
     const { lumine, state, fixture, open } = context;
@@ -27,11 +27,14 @@ module.exports = {
           lumine.workspace.getCenter().getPanes()[0].activateItem(state.editor);
         }
       },
+      // The runner's pointer rests over the controls at this viewport width.
+      afterPointerMove() {},
       ready(context) {
         const { lumine } = context;
         const panes = lumine.workspace.getCenter().getPanes();
         return (
           panes.length === 2 &&
+          getComputedStyle(document.querySelector("#quick-layout-two-columns")).opacity === "1" &&
           panes.every((pane) => {
             const editor = pane.getActiveItem();
             return (
