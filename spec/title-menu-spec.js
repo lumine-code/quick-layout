@@ -60,13 +60,25 @@ describe("Quick Layout title tile menus", () => {
       }
     }
   });
-  it("reads dock visibility when opened and keeps state and the primary action in plain tooltips", () => {
+  it("keeps dock visibility actions plain and describes their current state in tooltips", () => {
     const tile = window.getElement().querySelector("#quick-layout-toggle-left-dock");
     const dock = lumine.workspace.getLeftDock();
     dock.hide();
-    expect(menu(tile).find((item) => item.command).checked).toBe(false);
+    expect(menu(tile).find((item) => item.command).checked).toBeUndefined();
     dock.show();
-    expect(menu(tile).find((item) => item.command).checked).toBe(true);
+    const actions = menu(tile);
+    const action = actions.find((item) => item.command);
+    expect(action.checked).toBeUndefined();
+    expect(action.type).not.toBe("checkbox");
+    expect(action.type).not.toBe("radio");
+    const popup = lumine.contextMenu.show(tile, actions);
+    try {
+      const row = popup.element.querySelector(".menu-item");
+      expect(row.getAttribute("role")).toBe("menuitem");
+      expect(row.hasAttribute("aria-checked")).toBe(false);
+    } finally {
+      popup.close();
+    }
     const options = tooltips.calls.all().find((call) => call.args[0] === tile).args[1];
     expect(options.keyBindingCommand).toBe("quick-layout:toggle-left-dock");
     expect(options.keyBindingTarget).toBe(window.getElement());
