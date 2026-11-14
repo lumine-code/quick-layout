@@ -16,7 +16,7 @@ module.exports = {
       caption: "Arrange two source panes side by side.",
       timeout: 60000,
       async run(context) {
-        const { lumine, state, fixture } = context;
+        const { lumine, state, fixture, waitFor } = context;
         {
           await lumine.commands.dispatch(
             lumine.views.getView(state.editor),
@@ -25,6 +25,11 @@ module.exports = {
           lumine.workspace.getCenter().getPanes()[1].activate();
           await lumine.workspace.open(fixture("Signal Lab/README.md"));
           lumine.workspace.getCenter().getPanes()[0].activateItem(state.editor);
+          await waitFor(
+            () => document.querySelector(".title-bar.controls-collapsed"),
+            "the layout controls collapse in the narrow window",
+          );
+          document.querySelector(".title-bar .control-tiles-toggle").click();
         }
       },
       // The runner's pointer rests over the controls at this viewport width.

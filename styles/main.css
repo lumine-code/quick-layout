@@ -18,7 +18,8 @@
   }
 }
 
-.title-bar .control-tiles:is(:hover, :focus-within) .quick-layout {
+.title-bar .control-tiles:is(:hover, :focus-within) .quick-layout,
+.title-bar.controls-expanded .control-tiles .quick-layout {
   opacity: 1;
   pointer-events: auto;
 }
