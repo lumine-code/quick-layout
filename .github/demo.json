@@ -1,18 +1,18 @@
 {
   "title": "quick-layout",
   "description": "Arrange two source panes side by side.",
-  "recordedOn": "2026-11-05",
-  "sourceRevision": "2817ef821bfd8c073307fea594b6b15cbe85a09e",
-  "themeSourceRevision": "6e7e9f93cc5b0612b4631e06d0b80e5ca88a7302",
+  "recordedOn": "2026-11-14",
+  "sourceRevision": "943fa4afe7f18d790a8f21d7613d0d1419b0d276",
+  "themeSourceRevision": "9d440405a9e4721cf44e1a1e8d3f36a0eb696fc8",
   "mode": "normal",
   "fontSettings": "default",
   "scenario": "demo.js",
-  "recipeHash": "edeeda863c0ab2213241e7741ee9734f75ff9613b1e3a182f29d2e4ffd62ffab",
+  "recipeHash": "7d821d1695588888947eb5c1c035de8ca6a2041ce5363db8b1ef4083a0414c49",
   "environment": {
     "platform": "win32",
     "arch": "x64",
-    "electron": "45.2.3",
-    "chrome": "156.0.8078.80",
+    "electron": "45.3.1",
+    "chrome": "156.0.8078.96",
     "devicePixelRatio": 1,
     "locale": "en-GB",
     "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
@@ -24,42 +24,37 @@
   "privacy": { "version": 1, "location": "neutral", "textChecked": true },
   "sources": {
     "editor": {
-      "revision": "55e7d15c5f86ea3ff86c21a599f40b4a753e71fd",
+      "revision": "8e257fa6c113fc97dea272ec005a8e8425859ffb",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "package": {
-      "revision": "2817ef821bfd8c073307fea594b6b15cbe85a09e",
+      "revision": "943fa4afe7f18d790a8f21d7613d0d1419b0d276",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "quick-layout": {
-      "revision": "2817ef821bfd8c073307fea594b6b15cbe85a09e",
-      "dirty": false,
-      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
-    },
-    "language-gfm": {
-      "revision": "dbdfa0d7eb55a25a9cd6e4b7f8b388bc5d99dc6f",
+      "revision": "943fa4afe7f18d790a8f21d7613d0d1419b0d276",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "language-javascript": {
-      "revision": "54db3b4027a3b98ddc9911f0d6cf1a4a20c2cfb4",
+      "revision": "000495ae602bd6a326efb3b72612da224cf94b61",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "one-theme": {
-      "revision": "6e7e9f93cc5b0612b4631e06d0b80e5ca88a7302",
+      "revision": "9d440405a9e4721cf44e1a1e8d3f36a0eb696fc8",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "title-bar": {
-      "revision": "068e29b2de449248a6b6f4d7cb321e73c7328cd5",
+      "revision": "b7119f965f7829eaea0e3649d593ceafa1021c8c",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "tree-view": {
-      "revision": "d682de12e7a1a8501450add1c21d7c1674a75ee5",
+      "revision": "51fe3a5d9647bdfa16e7c79c3a0000d1a254b395",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     }
@@ -92,7 +87,7 @@
       "label": "Arrange two source panes side by side.",
       "width": 840,
       "height": 760,
-      "sha256": "8e3a19a49d640b1a4faec92ff72d3c3c79dd1c669f5f6d88036c71ada55bba59"
+      "sha256": "32a5239a1841559126c7d8128b5a4e97bfe23cea967c0c5adfa9116a82da8add"
     }
   ]
 }
