@@ -16,9 +16,10 @@ describe("quick-layout presentation windows", () => {
 
   it("adds layout controls to existing and future windows, with docks only in main", async () => {
     const extra = await lumine.workspace.openEditorWindow({ show: false });
-    expect(titleBar.forWindow(extra).getTiles().length).toBe(6);
+    expect(titleBar.forWindow(extra).getTiles().length).toBe(7);
     expect(extra.getElement().querySelectorAll(".quick-layout-layout").length).toBe(6);
     expect(extra.getElement().querySelectorAll(".quick-layout-toggle").length).toBe(0);
+    expect(extra.getElement().querySelectorAll(".quick-layout-full-screen").length).toBe(1);
     const main = lumine.workspace.getMainWindow();
     expect(main.getElement().querySelectorAll(".quick-layout-toggle").length).toBe(3);
     extra.getElement().querySelector("#quick-layout-grid-2x2").click();

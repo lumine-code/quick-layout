@@ -38,6 +38,7 @@ module.exports = {
         return (
           panes.length === 2 &&
           getComputedStyle(document.querySelector("#quick-layout-two-columns")).opacity === "1" &&
+          getComputedStyle(document.querySelector(".quick-layout-full-screen")).opacity === "1" &&
           panes.every((pane) => {
             const editor = pane.getActiveItem();
             return (

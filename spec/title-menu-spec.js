@@ -97,6 +97,26 @@ describe("Quick Layout title tile menus", () => {
     expect(window.getEditorContainer().getPanes().length).toBe(1);
     expect(tile.getAttribute("data-context-menu-boundary")).toBe("");
   });
+  it("offers the full screen toggle without layout variants and targets its own window", async () => {
+    const extra = await lumine.workspace.openEditorWindow({ show: false });
+    const tile = extra.getElement().querySelector(".quick-layout-full-screen");
+    const actions = menu(tile).filter((item) => item.command);
+    expect(actions.length).toBe(1);
+    expect(actions[0].label).toBe("Full Screen");
+    expect(actions[0].command).toBe("window:toggle-full-screen");
+    expect(actions[0].commandDetail).toBeUndefined();
+    const dispatch = spyOn(lumine.commands, "dispatch");
+    tile.dispatchEvent(new MouseEvent("click", { button: 0, altKey: true }));
+    tile.dispatchEvent(new MouseEvent("auxclick", { button: 1 }));
+    expect(dispatch).toHaveBeenCalledTimes(2);
+    for (const call of dispatch.calls.all()) {
+      expect(call.args).toEqual([extra.getElement(), "window:toggle-full-screen"]);
+    }
+    expect(getComputedStyle(tile).getPropertyValue("-webkit-app-region")).toBe("no-drag");
+    const options = tooltips.calls.all().find((call) => call.args[0] === tile).args[1];
+    expect(options.keyBindingCommand).toBe("window:toggle-full-screen");
+    expect(options.keyBindingTarget).toBe(extra.getElement());
+  });
   it("disposes menu definitions and detached button handlers with the service edge", () => {
     const connection = main.titleBars.values().next().value;
     const tile = window.getElement().querySelector("#quick-layout-two-columns");

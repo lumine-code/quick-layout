@@ -60,6 +60,12 @@
       "description": "Show layout buttons (1 pane, 2 columns, 3 columns, grid 2x2) in the title bar.",
       "type": "boolean",
       "default": true
+    },
+    "showFullScreenButton": {
+      "title": "Show Full Screen Button",
+      "description": "Show a full screen toggle to the right of the layout buttons in each title bar.",
+      "type": "boolean",
+      "default": true
     }
   },
   "devDependencies": {

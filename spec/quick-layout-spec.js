@@ -184,22 +184,47 @@ describe("quick-layout", () => {
       mainModule.consumeWindowTitleBar(titleBar, { window: lumine.workspace.getMainWindow() });
     });
 
-    it("adds dock and layout buttons as control tiles", () => {
-      expect(titleBar.tiles.length).toBe(9);
+    it("adds dock, layout and full screen buttons as control tiles", () => {
+      expect(titleBar.tiles.length).toBe(10);
       expect(titleBar.element.querySelectorAll(".quick-layout-toggle").length).toBe(3);
       expect(titleBar.element.querySelectorAll(".quick-layout-layout").length).toBe(6);
+      const fullScreen = titleBar.tiles.at(-1);
+      expect(fullScreen.item.classList.contains("quick-layout-full-screen")).toBe(true);
+      expect(fullScreen.priority).toBeGreaterThan(titleBar.tiles.at(-2).priority);
     });
 
     it("removes and restores buttons when settings change", () => {
       lumine.config.set("quick-layout.showLayoutButtons", false);
-      expect(titleBar.tiles.length).toBe(3);
+      expect(titleBar.tiles.length).toBe(4);
       expect(titleBar.element.querySelectorAll(".quick-layout-layout").length).toBe(0);
 
       lumine.config.set("quick-layout.showLayoutButtons", true);
-      expect(titleBar.tiles.length).toBe(9);
+      expect(titleBar.tiles.length).toBe(10);
 
       lumine.config.set("quick-layout.showDockButtons", false);
       expect(titleBar.element.querySelectorAll(".quick-layout-toggle").length).toBe(0);
+    });
+
+    it("configures full screen independently and removes detached handlers", () => {
+      const selector = ".quick-layout-full-screen";
+      const button = titleBar.element.querySelector(selector);
+      const otherButtons = [...titleBar.element.children].filter((item) => item !== button);
+      lumine.config.set("quick-layout.showFullScreenButton", false);
+      expect(titleBar.element.querySelector(selector)).toBeNull();
+      expect([...titleBar.element.children]).toEqual(otherButtons);
+      const dispatch = spyOn(lumine.commands, "dispatch");
+      button.click();
+      expect(dispatch).not.toHaveBeenCalled();
+
+      lumine.config.set("quick-layout.showFullScreenButton", true);
+      const restored = titleBar.element.querySelector(selector);
+      expect(restored).not.toBe(button);
+      expect(titleBar.tiles.length).toBe(10);
+      lumine.config.set("quick-layout.showDockButtons", false);
+      lumine.config.set("quick-layout.showLayoutButtons", false);
+      expect([...titleBar.element.children]).toEqual([restored]);
+      restored.click();
+      expect(dispatch).toHaveBeenCalledOnceWith(workspaceElement, "window:toggle-full-screen");
     });
 
     it("toggles a dock when its button is clicked", () => {

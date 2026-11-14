@@ -10,6 +10,7 @@ Fork of [layout-control](https://github.com/rafamel/atom-layout-control).
 
 - **Title bar buttons**: quick layout switching with independent title-bar control tiles (requires the `title-bar` package).
 - **Dock toggles**: left, bottom, and right dock visibility.
+- **Full screen**: toggle full screen from a separately configurable button to the right of the layout controls.
 - **Layout presets**: 1-4 columns, 1-3 rows, and 2x2 grid.
 - **Hover reveal**: buttons appear on title bar hover.
 
@@ -40,6 +41,8 @@ Commands available in `lumine-workspace`:
 ## Usage
 
 Left click a layout button to apply its preset, alt-click to redistribute items afterward, or middle click to sequentize them. Right click opens a menu containing every action. Dock buttons show their visibility and toggle on left or middle click; their context menu shows the same toggle with its current state.
+
+The Full Screen button toggles its own window on left or middle click. Its context menu offers the same action.
 
 Tooltips show the current state and primary click action with its matching keyboard binding.
 
@@ -91,7 +94,7 @@ The style can be adjusted according to user preferences in the `styles.css` file
 
 ## Services
 
-- `title-bar`: consumed to add the dock toggle and layout buttons as control tiles in the title bar.
+- `title-bar`: consumed to add the dock toggle, layout and full screen buttons as control tiles in the title bar.
 
 ## Contributing
 

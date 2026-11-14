@@ -66,14 +66,14 @@ describe("quick-layout title-bar service ownership", () => {
     const oldProvider = provide(oldBar);
     const currentBar = createBar();
     provide(currentBar);
-    expect(oldBar.getTiles().length).toBe(9);
-    expect(currentBar.getTiles().length).toBe(9);
+    expect(oldBar.getTiles().length).toBe(10);
+    expect(currentBar.getTiles().length).toBe(10);
     const currentButton = currentBar.element.querySelector("#quick-layout-toggle-left-dock");
 
     oldProvider.dispose();
 
     expect(oldBar.getTiles().length).toBe(0);
-    expect(currentBar.getTiles().length).toBe(9);
+    expect(currentBar.getTiles().length).toBe(10);
     expect(currentButton?.isConnected).toBe(true);
     currentButton?.click();
     expect(lumine.workspace.getLeftDock().isVisible()).toBe(true);
@@ -84,9 +84,9 @@ describe("quick-layout title-bar service ownership", () => {
     const first = provide(bar);
     const second = provide(bar);
     const button = bar.element.querySelector("#quick-layout-toggle-left-dock");
-    expect(bar.getTiles().length).toBe(9);
+    expect(bar.getTiles().length).toBe(10);
     first.dispose();
-    expect(bar.getTiles().length).toBe(9);
+    expect(bar.getTiles().length).toBe(10);
     expect(bar.element.querySelector("#quick-layout-toggle-left-dock")).toBe(button);
 
     second.dispose();
@@ -100,12 +100,23 @@ describe("quick-layout title-bar service ownership", () => {
     provide(currentBar);
     const dockButton = currentBar.element.querySelector("#quick-layout-toggle-left-dock");
     lumine.config.set("quick-layout.showLayoutButtons", false);
-    expect(oldBar.getTiles().length).toBe(3);
-    expect(currentBar.getTiles().length).toBe(3);
+    expect(oldBar.getTiles().length).toBe(4);
+    expect(currentBar.getTiles().length).toBe(4);
     lumine.config.set("quick-layout.showLayoutButtons", true);
-    expect(oldBar.getTiles().length).toBe(9);
-    expect(currentBar.getTiles().length).toBe(9);
+    expect(oldBar.getTiles().length).toBe(10);
+    expect(currentBar.getTiles().length).toBe(10);
     expect(currentBar.element.querySelector("#quick-layout-toggle-left-dock")).toBe(dockButton);
+    lumine.config.set("quick-layout.showFullScreenButton", false);
+    for (const bar of [oldBar, currentBar]) {
+      expect(bar.getTiles().length).toBe(9);
+      expect(bar.element.querySelector(".quick-layout-full-screen")).toBeNull();
+    }
+    lumine.config.set("quick-layout.showFullScreenButton", true);
+    for (const bar of [oldBar, currentBar]) {
+      expect(bar.getTiles().at(-1).getItem().classList.contains("quick-layout-full-screen")).toBe(
+        true,
+      );
+    }
   });
 
   it("removes the retired bar's tooltips, dock listeners and detached button handlers", () => {
@@ -136,10 +147,10 @@ describe("quick-layout title-bar service ownership", () => {
     provide(oldBar);
     const currentBar = createBar();
     provide(currentBar).dispose();
-    expect(oldBar.getTiles().length).toBe(9);
+    expect(oldBar.getTiles().length).toBe(10);
     expect(currentBar.getTiles().length).toBe(0);
     lumine.config.set("quick-layout.showDockButtons", false);
-    expect(oldBar.getTiles().length).toBe(6);
+    expect(oldBar.getTiles().length).toBe(7);
   });
 
   it("does not let a retired activation's direct edge remove newer controls on the same bar", async () => {
@@ -153,7 +164,7 @@ describe("quick-layout title-bar service ownership", () => {
       window: lumine.workspace.getMainWindow(),
     });
     oldEdge.dispose();
-    expect(bar.getTiles().length).toBe(9);
+    expect(bar.getTiles().length).toBe(10);
     currentEdge.dispose();
     expect(bar.getTiles().length).toBe(0);
   });
