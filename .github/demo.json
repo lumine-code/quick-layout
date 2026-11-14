@@ -2,12 +2,12 @@
   "title": "quick-layout",
   "description": "Arrange two source panes side by side.",
   "recordedOn": "2026-11-14",
-  "sourceRevision": "943fa4afe7f18d790a8f21d7613d0d1419b0d276",
+  "sourceRevision": "8ebcfa0795a441cf14c5565963ba2b25bc6db2d4",
   "themeSourceRevision": "9d440405a9e4721cf44e1a1e8d3f36a0eb696fc8",
   "mode": "normal",
   "fontSettings": "default",
   "scenario": "demo.js",
-  "recipeHash": "7d821d1695588888947eb5c1c035de8ca6a2041ce5363db8b1ef4083a0414c49",
+  "recipeHash": "d18eae79e479eb09fae07a255ff220d72f04affc5de099de465d9b63256d6321",
   "environment": {
     "platform": "win32",
     "arch": "x64",
@@ -29,12 +29,117 @@
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "package": {
-      "revision": "943fa4afe7f18d790a8f21d7613d0d1419b0d276",
+      "revision": "8ebcfa0795a441cf14c5565963ba2b25bc6db2d4",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "quick-layout": {
-      "revision": "943fa4afe7f18d790a8f21d7613d0d1419b0d276",
+      "revision": "8ebcfa0795a441cf14c5565963ba2b25bc6db2d4",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "about": {
+      "revision": "c81a03a5c423d928d75d48fd365bb26b07da92ac",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "background-tips": {
+      "revision": "abee677b4f3cdcabd0552364229bbc75de0bd94b",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "breadcrumbs": {
+      "revision": "81940a605e94fefe48073641e5e770607a6a44c0",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "command-palette": {
+      "revision": "e900d45f61ca1be6744fc0dad1dc1f954af48c78",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "deprecation-cop": {
+      "revision": "82f8680ea3e6a794cd2e847b141e59ba1ed466b9",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "dev-live-reload": {
+      "revision": "fa6664f3a1d7a5009e478afaac9a38a04f92e723",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "encoding-selector": {
+      "revision": "5ff9f20d5cba6d6dd2e94c8db73f2fd301cd85a8",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "git-chunk": {
+      "revision": "3dfb1d7ba234f6348f342b3b7defc6e6c53fbf85",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "go-to-line": {
+      "revision": "65a4b9abb5c01beb8d2fe6e7771356ff2a30d7ef",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "grammar-selector": {
+      "revision": "78fdfbcd8d7a2c224afdf84e396b5c11b7a89de5",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "incompatible-packages": {
+      "revision": "244397dfaa7ac2fd533661e422806ec1dc59e9e0",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "keybinding-resolver": {
+      "revision": "c4cf9aa5c5c4ba396f37bb5d1acb5f5bb7efe3c2",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-c": {
+      "revision": "4b9dca352be1ac7908ce0f64bed5fbc3cf00730b",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-css": {
+      "revision": "84c2c8988359d13b906828e5d2582ff1e5bb09c0",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-csv": {
+      "revision": "ef94f8f25bad42710dee5cde86f69eded1faf2de",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-diff": {
+      "revision": "d582e4ed9d15c24c49a428ad5644ef6ca58ac3c2",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-gfm": {
+      "revision": "5064bea1b467deb54d88f5b218543257b16188d8",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-git": {
+      "revision": "193d92a41aa69af9b642422557ddf196fdd2b1b9",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-html": {
+      "revision": "d6fd6772375465cf72bce88d55181473be8e6bd5",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-hyperlink": {
+      "revision": "13325a4884bf5fed1295d6b499e8a85e7cb58b59",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-ipython": {
+      "revision": "0184c829e909611ff545b6b115e12422edebfc19",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
@@ -43,18 +148,158 @@
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
+    "language-json": {
+      "revision": "eca2dd0948096fe81d7b445adcf77a700fc6ce7f",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-log": {
+      "revision": "a30493e7a6cb6b468fbbd1a999872aba44e58edc",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-powershell": {
+      "revision": "94f612f57c5d5cacecf29526975803aa50e10462",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-python": {
+      "revision": "612488c410675d504846d0f82884c596a199344f",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-regex": {
+      "revision": "1e182ec2b752c58d1485c855e36e4321ab44c5e6",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-shellscript": {
+      "revision": "8443505e3a3be6b9c4bf6e88e59d41f02b2d7260",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-source": {
+      "revision": "10a8c8b51186d245d7b4a35c41e743ffd46665ce",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-sql": {
+      "revision": "a4afa033c5cea2149f5684d5efa1316681d18b02",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-text": {
+      "revision": "42eb5052eeff55f045428406c3c931aabe422106",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-todo": {
+      "revision": "847938a646d7b6816017db8705028116d34e5219",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-toml": {
+      "revision": "abe33a8c98d752af9a507c1ea0d9a10a7c26df2c",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-typescript": {
+      "revision": "38dfac0399a68bd75facc76389d5ce2d6cc6d665",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-xml": {
+      "revision": "f5444f24bcb70cf0e34ac0baf2831cce22aef5bd",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "language-yaml": {
+      "revision": "20526f8f82798d25f4d29b46406c089916b2d72e",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "launcher": {
+      "revision": "86d8629e6822cb4bd5a2782c2faff53433f1a3e7",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "line-ending": {
+      "revision": "5d71bf206de572273931688ee58f620b73056d69",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "lumine-updater": {
+      "revision": "1e637acd72830232bd8664c8ce25746b86f6d3c4",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "metadata": {
+      "revision": "33a7a10d0341c7b098bcf836544ed1996b4f93eb",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "notifications": {
+      "revision": "bfdbc353040e66ff35a729d9172bc4415ccd4624",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
     "one-theme": {
       "revision": "9d440405a9e4721cf44e1a1e8d3f36a0eb696fc8",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
+    "search-panel": {
+      "revision": "e642ba8d0acf66d95f58fdc47f9cff15b3f76224",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "settings-view": {
+      "revision": "c3c28efdf9e974e354b3ba65eb474ba84798bf4d",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "snippets": {
+      "revision": "d236dcc36975961366f38a0c16d3a3bf021dc945",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "status-bar": {
+      "revision": "b1f8715fcf15cd0a09e0f756f8137c4993abb075",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "styleguide": {
+      "revision": "e0477635e8a56eeadee0308b9eef72ae0cc59a1b",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "tabs": {
+      "revision": "04469b1489d5cc50f892c756c68fd8f7b0317654",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "timecop": {
+      "revision": "c7d18d6c9a6e91c98e4ea2f5b85f6618e609daa3",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
     "title-bar": {
-      "revision": "b7119f965f7829eaea0e3649d593ceafa1021c8c",
+      "revision": "1aaf0e59886d57e16402d274298c3f2d286c5895",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     },
     "tree-view": {
       "revision": "51fe3a5d9647bdfa16e7c79c3a0000d1a254b395",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "whitespace": {
+      "revision": "4cb3f865e07335c1eb569a1d9d9b25d7c0375dae",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "window-title": {
+      "revision": "102047cf367b6dea0e68e441d3bb7e1d719d2d2c",
       "dirty": false,
       "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
     }
@@ -87,7 +332,7 @@
       "label": "Arrange two source panes side by side.",
       "width": 840,
       "height": 760,
-      "sha256": "32a5239a1841559126c7d8128b5a4e97bfe23cea967c0c5adfa9116a82da8add"
+      "sha256": "4946e9578214bf3b0c7024758b5d1c7790109f84f17ce062650d6a56c115a6d4"
     }
   ]
 }
