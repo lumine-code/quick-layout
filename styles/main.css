@@ -16,6 +16,11 @@
   &.title-bar-item {
     width: 28px;
   }
+
+  &:focus-visible {
+    outline: 1px solid var(--accent-indicator-color);
+    outline-offset: -2px;
+  }
 }
 
 .title-bar .control-tiles:is(:hover, :focus-within) .quick-layout,
